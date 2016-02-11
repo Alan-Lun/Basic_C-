@@ -25,7 +25,9 @@ namespace BasicCSherp_Console
 
             string _strPC2 = _PC2.Happy();
 
-
+            //A3 方法重載
+            A2 _PC3 = new A2();
+            string _strPC3 = _PC3.Happy("自爽");
 
 
         }
@@ -59,6 +61,16 @@ namespace BasicCSherp_Console
                 return name + "很開心";
             }
 
+            //方法重載
+            public A2()
+            {
+                this.name = "無名";
+            }
+
+            public string Happy(string _strHappy)
+            {
+                return _strHappy;
+            }
 
 
         }
