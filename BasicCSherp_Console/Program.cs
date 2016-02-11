@@ -19,6 +19,12 @@ namespace BasicCSherp_Console
             string _Happy=_PC.Happy();
 
 
+            //-----------------------------------------------
+            
+            A2 _PC2 = new A2("龍魂GE60"); //可以在裝好電腦時，為他取名，這樣大家才會知道是哪台，當然建構式可以多個
+
+            string _strPC2 = _PC2.Happy();
+
 
 
 
@@ -36,6 +42,29 @@ namespace BasicCSherp_Console
                 return "開心";
             }
         }
+
+        /// <summary>
+        /// A2-建構式
+        /// </summary>
+        public class A2
+        {
+            private string name = "";//只能在裡面使用的變數
+            public A2(string name)
+            {
+                this.name = name;
+            }
+
+            public string Happy()
+            {
+                return name + "很開心";
+            }
+
+
+
+        }
+
+
+
     }
    
 
