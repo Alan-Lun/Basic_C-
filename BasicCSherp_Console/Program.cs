@@ -37,6 +37,15 @@ namespace BasicCSherp_Console
             Console.WriteLine(_PC4.ReStart());
             Console.Read();
 
+            //A5 封裝，剛才都是在使用封裝的
+            //假設現在A5是NB，他也一樣會有ReStart
+            A5 _NB = new A5();
+            _NB.ReStartNum = 5;
+            Console.WriteLine(_NB.ReStart());
+            Console.Read();
+
+
+
         }
 
 
@@ -131,6 +140,59 @@ namespace BasicCSherp_Console
 
 
         }
+
+        /// <summary>
+        /// A5-封裝
+        /// </summary>
+        public class A5
+        {
+            //良好的封裝能夠減少耦合
+            //類別內部實現可以自由地修改
+            //類別具有清晰的對外界面
+
+
+            //屬性，可設定成唯獨或者是條件式設定
+            private int _ReStartNum;
+
+            public int ReStartNum
+            {
+                get { return _ReStartNum; }
+                // set { _ReStartNum = value; }
+                set
+                {
+                    if (value <= 5)
+                    {
+                        _ReStartNum = value;
+                    }
+                    else
+                    {
+                        _ReStartNum = 5;
+                    }
+
+
+
+                }
+
+
+            }
+
+            public string ReStart()
+            {
+                string result = "";
+                for (int i = 0; i < ReStartNum; i++)
+                {
+                    result += "重開 ";
+                }
+                return result;
+
+
+
+            }
+
+
+
+        }
+
 
 
 
