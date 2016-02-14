@@ -43,7 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="A10_Generics.cs" />
     <Compile Include="A6_Extend.cs" />
+    <Compile Include="A7_Polymorphism.cs" />
+    <Compile Include="A8_abstract.cs" />
+    <Compile Include="A9_Interface.cs" />
+    <Compile Include="IA9_Interface.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

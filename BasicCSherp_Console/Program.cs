@@ -65,6 +65,16 @@ namespace BasicCSherp_Console
             Console.WriteLine(_A9.ChangeThing("第一個"));
             Console.WriteLine(_A9_2.ChangeThing("第二個"));
 
+            //A10 泛型
+            IList<Animal> arrayAnimal = new List<Animal>();
+            arrayAnimal.Add(new Cat_Extend("tt"));
+            arrayAnimal.Add(new Dog_Extend("tt2"));
+            arrayAnimal.Add(new Cat_Extend("tt3"));
+            Console.WriteLine(arrayAnimal.Count.ToString());
+
+
+
+
             Console.Read();
 
 
