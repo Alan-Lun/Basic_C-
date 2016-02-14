@@ -69,6 +69,67 @@ namespace BasicCSherp_Console
 
 
 
+    //委派增加多參數方式
+    //EventArgs是包含事件資料的類別基礎類別。他是作用在事件觸發時傳遞資料用的，他的Name是CatShout建觸發時，需要傳遞Cat物件的名字
+    public class CatShoutEventArgs:EventArgs
+    {
+        private string name;
+        public string Name
+        {
+            get { return name; }
+            set { name = value; }
+        }
+    }
+
+    public class cat_deleget2
+    {
+        private string name;
+        public cat_deleget2(string name)
+        {
+            this.name = name;
+        }
+
+        //object對象Sender是指向發送通知的對象，第二個參數CatShoutEventArgs的args包含了通知接受者需要附件的資訊。在這裡顯然就是貓的名子資訊
+        public delegate void CatShoutEventHandler(object sender,CatShoutEventArgs args); //宣告委託事件
+
+        public event CatShoutEventHandler CatShout; //宣告事件CatShout，事件類型是委託CatShoutEventHandler
+
+        public void Shout()
+        {
+            Console.WriteLine("喵,我是{0}", name);
+
+            if (CatShout != null)
+            {
+                CatShoutEventArgs e = new CatShoutEventArgs(); //給Name賦予值
+                e.Name = this.name;
+                CatShout(this,e); //如果當執行shout()方法時，如果catshout有物件登記事件，則執行CatShout()
+                //object sender就是傳遞發送通知的物件，EventArgs是包含事件數據的類別
+            }
+
+        }
+
+
+
+
+    }
+
+    public class mouse_deleget2
+    {
+        private string name;
+        public mouse_deleget2(string name)
+        {
+            this.name = name;
+        }
+
+
+        public void Run(object sender,CatShoutEventArgs args)
+        {
+            Console.WriteLine("{0}老貓來，{1}",args.Name, name);
+        }
+
+    }
+
+
 
 
 }

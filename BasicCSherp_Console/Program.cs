@@ -83,6 +83,14 @@ namespace BasicCSherp_Console
             _cat.CatShout += new cat_deleget.CatShoutEventHandler(_mo2.Run);
             _cat.Shout();
 
+            cat_deleget2 _cat2 = new cat_deleget2("T");
+            mouse_deleget2 _mo21 = new mouse_deleget2("Ja");
+            mouse_deleget2 _mo22 = new mouse_deleget2("Jb");
+            _cat2.CatShout += new cat_deleget2.CatShoutEventHandler(_mo21.Run);
+            _cat2.CatShout += new cat_deleget2.CatShoutEventHandler(_mo22.Run);
+            _cat2.Shout();
+
+
             Console.Read();
 
 
