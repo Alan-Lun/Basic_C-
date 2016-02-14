@@ -72,8 +72,16 @@ namespace BasicCSherp_Console
             arrayAnimal.Add(new Cat_Extend("tt3"));
             Console.WriteLine(arrayAnimal.Count.ToString());
 
+            //A11 泛型
 
+            cat_deleget _cat = new cat_deleget("T");
+            mouse_deleget _mo1 = new mouse_deleget("Ja");
+            mouse_deleget _mo2 = new mouse_deleget("Jb");
 
+            //表示將Mouse的Run方法透過實體化委託給CatShoutEventHandler登記到Cat的事件CatShout當中，+=是為了加進去add_CatShout的意思
+            _cat.CatShout += new cat_deleget.CatShoutEventHandler(_mo1.Run);
+            _cat.CatShout += new cat_deleget.CatShoutEventHandler(_mo2.Run);
+            _cat.Shout();
 
             Console.Read();
 
