@@ -91,6 +91,17 @@ namespace BasicCSherp_Console
             _cat2.Shout();
 
 
+
+            //A12-yieldreturn
+            yieldreturn _yield = new yieldreturn();
+            var _return = _yield.returnACD();
+            string _strreturn = "";
+            foreach (var item in _return)
+            {
+                _strreturn += item;
+            }
+            Console.WriteLine(_strreturn);
+
             Console.Read();
 
 

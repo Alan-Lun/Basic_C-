@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="A10_Generics.cs" />
+    <Compile Include="A11_delegete.cs" />
     <Compile Include="A6_Extend.cs" />
     <Compile Include="A7_Polymorphism.cs" />
     <Compile Include="A8_abstract.cs" />
@@ -51,6 +52,7 @@
     <Compile Include="IA9_Interface.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="yieldreturn.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
